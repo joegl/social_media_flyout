@@ -1,0 +1,5 @@
+name: Social Media Flyout
+type: module
+description: 'Creates a social media flyout feed for Facebook, Instagram, and Twitter accounts'
+core: 8.x
+

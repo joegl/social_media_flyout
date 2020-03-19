@@ -1,0 +1,7 @@
+SMFFeed:
+  version: VERSION
+  css:
+    component:
+      css/SMFFeed.css: { preprocess: TRUE }
+  js:
+    js/SMFFeed.js: { preprocess: TRUE }

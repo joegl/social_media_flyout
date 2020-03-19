@@ -1,0 +1,32 @@
+# default settings form
+social_media_flyout.settings:
+  path: '/admin/config/services/smf'
+  defaults:
+    _form: '\Drupal\social_media_flyout\Form\SMFSettings'
+    _title: 'Social Media Flyout Settings'
+  requirements:
+    _permission: 'administer social media flyout'
+# smfprofile plugin settings pages
+social_media_flyout.smfprofile_settings:
+  path: '/admin/config/services/smf/profiles'
+  defaults:
+    _form: '\Drupal\social_media_flyout\Controller\SMFProfileSettings'
+    _title: 'Social Media Flyout Profiles'
+  requirements:
+    _permission: 'administer social media flyout'
+
+# feed flyout
+# open a feed
+social_media_flyout.open_feed:
+  path: '/smf/openFeed/{smf_plugin}'
+  defaults:
+    _controller: '\Drupal\social_media_flyout\Controller\SMFFeedController::openFeed'
+  requirements:
+    _permission: 'access content'
+# close the feed
+social_media_flyout.close_feed:
+  path: '/smf/closeFeed'
+  defaults:
+    _controller: '\Drupal\social_media_flyout\Controller\SMFFeedController::closeFeed'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,17 @@
+# default settings form top level tab
+social_media_flyout.settings_main:
+  title: 'Social Media Flyout'
+  route_name: social_media_flyout.settings
+  base_route: social_media_flyout.settings
+# default settings form sub tab
+social_media_flyout.settings_sub:
+  title: 'Settings'
+  route_name: social_media_flyout.settings
+  base_route: social_media_flyout.settings
+  parent_id: social_media_flyout.settings_main
+# smfprofile plugin settings sub tab
+timber.timberperm_tab:
+  title: 'Profiles'
+  route_name: social_media_flyout.smfprofile_settings
+  base_route: social_media_flyout.settings
+  parent_id: social_media_flyout.settings_main

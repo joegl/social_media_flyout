@@ -1,0 +1,24 @@
+<?php
+
+
+// make a queueworker for this eventually but use cron for now
+function social_media_flyout_cron() {
+  
+  // Get the list of all the SMFProfile plugins defined on the system from the
+  // plugin manager. Note that at this point, what we have is *definitions* of
+  // plugins, not the plugins themselves.
+  $smfProfileManager = \Drupal::service('plugin.manager.smfprofile');
+  $plugin_definitions = $smfProfileManager->getDefinitions();
+
+  foreach($plugin_definitions as $plugin_id => $plugin_definition) {
+    // To get an instance of a plugin, we call createInstance() on the plugin
+    // manager, passing the ID of the plugin we want to load
+    $plugin = $smfProfileManager->createInstance($plugin_id);
+    if($plugin->enabled()) {
+      $plugin->updatePosts();
+    }
+  }
+
+}
+
+?>

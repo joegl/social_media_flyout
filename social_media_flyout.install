@@ -1,0 +1,82 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the social_media_flyout module.
+ */
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_schema().
+ */
+function social_media_flyout_schema() {
+  /*
+    post_id - auto increment reference id
+    plugin_id - id of smfprofile plugin (facebook, twitter, instagram, etc.,)
+    posted - when the post was posted on the profile
+    retrieved - when the post was retrieved from the API
+    post_data - an associated array of unique post data, retrieved from the API
+  */
+
+  $schema['smf_posts'] = array(
+  'description' => 'Stores posts retrieved from Social Media profiles',
+    'fields' => array(
+      'post_id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => "An auto-incremented reference ID for the post",
+      ),
+      'src_post_id' => array(
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => "The source id of the post, dependent on the SMProfile",
+      ),
+      'plugin_id' => array(
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => "The id of the SMFProfile - Social Media Profile Plugin",
+      ),
+      'profile_user' => array(
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => "The user name the post belongs to",
+      ),
+      'posted' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "When the post was posted on the profile",
+      ),
+      'retrieved' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "When the post was retrieved from the API",
+      ),
+      'post_data' => array(
+        'type' => 'blob',
+        'not null' => TRUE,
+        'size' => 'big',
+        'description' => 'Serialized array of post data',
+      ),
+    ),
+    'indexes' => array(
+      'posted_date' => array('posted'),
+      'retrieved_date' => array('retrieved'),
+    ),
+    'primary key' => array('post_id'),
+  );
+
+  return $schema;
+}
+
+
+?>

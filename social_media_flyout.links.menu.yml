@@ -1,0 +1,14 @@
+# add a menu link for the settings form route
+social_media_flyout.settings:
+  title: 'Social Media Flyout Settings'
+  route_name: social_media_flyout.settings
+  weight: 10
+  parent: system.admin_config_services
+  description: 'Configure Social Media Flyout Settings.'
+# add a child link for configuring profiles
+social_media_flyout.smfprofile_settings:
+  title: Profiles
+  route_name: social_media_flyout.smfprofile_settings
+  weight: 10
+  parent: social_media_flyout.settings
+  description: 'Configure Social Media Flyout Profiles.'

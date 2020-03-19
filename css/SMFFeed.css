@@ -1,0 +1,125 @@
+/* the clickable icons/links in the block */
+.smf-block {
+
+}
+.smf-block .smf-links {
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  display: block;
+  text-align: center;
+}
+.smf-block .smf-links a {
+  display: inline-block;
+  margin: 0 .25em;
+  transition: opacity 0.25s ease-out;
+}
+.smf-block .smf-links a:hover {
+  opacity: .5;
+}
+.smf-block .smf-links a:before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+}
+
+/* the flyout */
+.smf-flyout {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+  z-index: 105;
+  width: 300px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  color: #555;
+  background-color: #FEFEFE;
+  border: 1px solid #DEDEDE;
+  border-top: 5px solid #6CC;
+}
+.smf-flyout.show-flyout {
+  display: block;
+}
+.smf-flyout .smf-feed-header {
+  padding: .75em .5em;
+  border-bottom: 2px solid #EEE;
+}
+.smf-flyout .smf-feed-header .smf-feed-title {
+  float: left;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 1.125em;
+  font-weight: 600;
+  letter-spacing: -.025em;
+  color: #666;
+}
+.smf-flyout .smf-feed-header .close-feed {
+  display: inline-block;
+  float: right;
+  padding: 0;
+  font-size: .875em;
+  font-weight: 600;
+  color: #F77;
+  cursor: pointer;
+}
+.smf-flyout .smf-feed-header .close-feed:hover {
+  color: #F00;
+}
+.smf-flyout .smf-feed-header .close-feed:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+.smf-flyout .smf-feed-header .smf-profile-link {
+  display: block;
+  clear: both;
+  margin: .5em 0 0 0;
+  font-size: .75em;
+}
+.smf-flyout .smf-feed-content {
+  
+}
+
+/* the feed */
+.smf-feed-content {
+
+}
+.smf-feed-content .smf-post {
+  font-size: .875em;
+  padding: .5em .5em;
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #EEE;
+}
+.smf-feed-content .smf-post-date {
+  margin: .5em 0;
+  font-size: .75em;
+  color: #777;
+}
+.smf-feed-content .smf-post-content {
+  font-size: .875em;
+  line-height: 1.4em;
+}
+.smf-feed-content a.smf-post-view-link {
+  margin: .5em 0 0 0;
+  font-size: .75em;
+}
+
+/* icons */
+.smf-links .smf-link-facebook:before {
+  background-image: url("images/icons/facebook.png");
+}
+.smf-links .smf-link-instagram:before {
+  background-image: url("images/icons/instagram.png");
+}
+.smf-links .smf-link-twitter:before {
+  background-image: url("images/icons/twitter.png");
+}
